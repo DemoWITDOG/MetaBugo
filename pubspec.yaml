@@ -1,0 +1,35 @@
+name: metabugo
+description: "meta_bugo"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+
+  fonts:
+    - family: KoPubBatang
+      fonts:
+        - asset: assets/font/KoPubBatangLight.ttf
+          weight: 300
+        - asset: assets/font/KoPubBatangMedium.ttf
+          weight: 500
+        - asset: assets/font/KoPubBatangBold.ttf
+          weight: 700
+

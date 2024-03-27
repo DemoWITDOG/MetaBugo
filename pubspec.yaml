@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  provider: ^6.1.2
+  kakao_flutter_sdk: ^1.9.1+2
 
 dev_dependencies:
   flutter_test:
@@ -41,10 +43,8 @@ flutter:
         - asset: assets/font/pretendardRegular.otf
           weight: 400
 
-
-
   assets:
     - assets/images/candle.png
-    - assets/images/splash.png
+    - assets/images/splash_images/splash.png
     - assets/images/kakao.png
-    - assets/images/flower.png
+    - assets/images/flower_icon.png

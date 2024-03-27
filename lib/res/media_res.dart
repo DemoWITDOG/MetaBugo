@@ -5,6 +5,19 @@ class MediaRes{
 
   // base images path
   static const String _baseSplashImage = 'assets/images/splash_images';
+  static const String _baseImagePath = 'assets/images';
+
+  // image path
+
+  static const _candle = '$_baseImagePath/candle.png';
+  static const _splash = '$_baseSplashImage/splash.png';
+  static const _kakao = '$_baseSplashImage/kakao.png';
+  static const _flowerIcon = '$_baseImagePath/flower_icon.png';
+
+  static String get candle => _candle;
+  static String get splash => _splash;
+  static String get kakao => _kakao;
+  static String get flowerIcon => _flowerIcon;
 
   // color
   static const int _splashMainColor = 0xfff5efe8;
@@ -20,13 +33,30 @@ class MediaRes{
   static const int _redAlertText = 0xffEA2727;
   static const int _bugoPannel = 0xff3B3737 ;
 
-  static const int _mainBtnColor=0xff9F836A;
-  static const int _kakaoBtnColor=0xffFFEB3B;
-  static const int _blackBtnColor=0xff201D1D;
-  static const int _greyBtnColor=0xffB2B2B2;
+  static const int _mainBtnColor = 0xff9F836A;
+  static const int _kakaoBtnColor = 0xffFFEB3B;
+  static const int _blackBtnColor = 0xff201D1D;
+  static const int _greyBtnColor = 0xffB2B2B2;
+
+  static Color get splashMainColor => Color(_splashMainColor);
+  static Color get whiteColor => Color(_whiteColor);
+  static Color get blockColor => Color(_blockColor);
+  static Color get textUnderLineColor => Color(_textUnderLineColor);
+  static Color get blueColor => Color(_blueColor);
+  static Color get blueText => Color(_blueText);
+  static Color get selectColor => Color(_selectColor);
+  static Color get checkBoxColor => Color(_checkBoxColor);
+  static Color get greyColor => Color(_greyColor);
+  static Color get redText => Color(_redText);
+  static Color get redAlertText => Color(_redAlertText);
+  static Color get bugoPannel => Color(_bugoPannel);
+
+  static Color get mainBtnColor => Color(_mainBtnColor);
+  static Color get kakaoBtnColor => Color(_kakaoBtnColor);
+  static Color get blackBtnColor => Color(_blackBtnColor);
+  static Color get greyBtnColor => Color(_greyBtnColor);
 
 // font weight
-  static const FontWeight _light = FontWeight.w300;
   static const FontWeight _regular = FontWeight.w400;
   static const FontWeight _medium = FontWeight.w500;
   static const FontWeight _semiBold = FontWeight.w600;
@@ -45,7 +75,6 @@ class MediaRes{
   static const String _fontPretendard = 'pretendard';
 
   // font styles
-
   static TextStyle regularTextStyle = TextStyle(
     fontFamily: _fontKoPubBatang,
     fontWeight: _regular,
@@ -72,10 +101,4 @@ class MediaRes{
       fontFamily: _fontPretendard,
       fontWeight: _semiBold
   );
-  // image path
-
-  static const _candle = 'assets/images/candle.png';
-  static const _splash = 'assets/images/splash.png';
-  static const _kakao = 'assets/images/kakao.png';
-  static const _flower = 'assets/images/flower.png';
 }

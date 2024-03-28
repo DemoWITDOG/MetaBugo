@@ -74,8 +74,11 @@ class MediaRes{
   static const String _fontKoPubBatang = 'KoPubBatang';
   static const String _fontPretendard = 'pretendard';
 
+  static String get fontKoPubBatang=>_fontKoPubBatang;
+  static String get fontPretendard=>_fontPretendard;
+
   // font styles
-  static TextStyle regularTextStyle = TextStyle(
+  static TextStyle _regularTextStyle = TextStyle(
     fontFamily: _fontKoPubBatang,
     fontWeight: _regular,
   );

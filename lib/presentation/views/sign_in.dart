@@ -15,88 +15,111 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading:
+            IconButton(onPressed: () {
+              Navigator.pop(context);
+            }, icon: Icon(Icons.keyboard_arrow_left)),
         title: Text('로그인하기',
-        style: TextStyle(
-          fontSize: MediaRes.fontSize20,
-          fontFamily: MediaRes.fontPretendard,
-          fontWeight: MediaRes.medium
-        ),),
+          style: TextStyle(
+            fontSize: MediaRes.fontSize20,
+            fontFamily: MediaRes.fontPretendard,
+            fontWeight: MediaRes.medium,
+          ),
+        ),
+        titleSpacing: 0,
+
       ),
       body: Column(
         children: [
           Container(
             height: MediaQuery.of(context).size.height * 0.33,
           ),
-          Container(
-            width: 328,
-            height: 56,
-            child: TextField(
-              keyboardType: TextInputType.number,
-              style: TextStyle(
-                fontWeight: MediaRes.medium,
-                fontFamily: MediaRes.fontPretendard,
-                fontSize: MediaRes.fontSize18,
-              ),
-              decoration: InputDecoration(
-                  hintText: '전화번호를 입력해주세요',
-                  hintStyle: TextStyle(
-                      color: MediaRes.greyColor,
-                      fontFamily: MediaRes.fontPretendard,
-                      fontSize: MediaRes.fontSize18),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(color: MediaRes.textUnderLineColor),
+          Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 16,right: 16),
+                  child: Container(
+                    height: 56,
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      style: TextStyle(
+                        fontWeight: MediaRes.medium,
+                        fontFamily: MediaRes.fontPretendard,
+                        fontSize: MediaRes.fontSize18,
+                      ),
+                      decoration: InputDecoration(
+                          hintText: '전화번호를 입력해주세요',
+                          hintStyle: TextStyle(
+                              color: MediaRes.greyColor,
+                              fontFamily: MediaRes.fontPretendard,
+                              fontSize: MediaRes.fontSize18),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide:
+                                BorderSide(color: MediaRes.textUnderLineColor),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide:
+                                BorderSide(color: MediaRes.greyBtnColor),
+                          )),
+                    ),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(color: MediaRes.greyBtnColor),
-                  )),
-            ),
+                ),
+              ),
+            ],
           ),
           SizedBox(
             height: 14,
           ),
-          ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(328, 56),
-                backgroundColor: MediaRes.mainBtnColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8)),
+          Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 16,right: 16),
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(0, 56),
+                        backgroundColor: MediaRes.mainBtnColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                      ),
+                      child: Text(
+                        '로그인하기',
+                        style: TextStyle(
+                            color: MediaRes.whiteColor,
+                            fontFamily: MediaRes.fontPretendard,
+                            fontSize: MediaRes.fontSize18),
+                      )),
+                ),
               ),
-              child: Text(
-                '로그인하기',
-                style: TextStyle(
-                    color: MediaRes.whiteColor,
-                    fontFamily: MediaRes.fontPretendard,
-                    fontSize: MediaRes.fontSize18),
-              )),
+            ],
+          ),
           SizedBox(height: 13),
           Padding(
-            padding: const EdgeInsets.only(left: 30.0),
-            // TODO:다른 기종으로 확인!!!!!!!!!!
-            child: Container(
-              child: Row(
-                children: [
-                  Checkbox(
-                    value: _isChecked,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        _isChecked = value!;
-                      });
-                    },
-                    activeColor: MediaRes.checkBoxColor,
+            padding: EdgeInsets.only(left: 16.0),
+            child: Row(
+              children: [
+                Checkbox(
+                  value: _isChecked,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      _isChecked = value!;
+                    });
+                  },
+                  activeColor: MediaRes.checkBoxColor,
+                ),
+                Text(
+                  '자동로그인',
+                  style: TextStyle(
+                    fontFamily: MediaRes.fontPretendard,
+                    fontSize: MediaRes.fontSize18,
+                    fontWeight: MediaRes.medium,
                   ),
-                  Text(
-                    '자동로그인',
-                    style: TextStyle(
-                      fontFamily: MediaRes.fontPretendard,
-                      fontSize: MediaRes.fontSize18,
-                      fontWeight: MediaRes.medium,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

@@ -38,6 +38,7 @@ class MediaRes{
   static const int _blackBtnColor = 0xff201D1D;
   static const int _greyBtnColor = 0xffB2B2B2;
 
+
   static Color get splashMainColor => Color(_splashMainColor);
   static Color get whiteColor => Color(_whiteColor);
   static Color get blockColor => Color(_blockColor);
@@ -61,6 +62,11 @@ class MediaRes{
   static const FontWeight _medium = FontWeight.w500;
   static const FontWeight _semiBold = FontWeight.w600;
   static const FontWeight _bold = FontWeight.w700;
+
+  static FontWeight get regular => _regular;
+  static FontWeight get medium => _medium;
+  static FontWeight get semiBold => _semiBold;
+  static FontWeight get bold => _bold;
 
   //font size
   static double get fontSize14  => 14 ;

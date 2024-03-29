@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metabugo/presentation/views/sign_in.dart';
 import 'package:metabugo/res/media_res.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +19,10 @@ class HomeScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              // 로그인하기 버튼이 눌렸을 때의 동작 추가
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context)=>SignIn()),
+              );// 로그인하기 버튼이 눌렸을 때의 동작 추가
             },
             child: Text(
               '로그인하기',

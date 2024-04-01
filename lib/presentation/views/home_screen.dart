@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:metabugo/presentation/providers/home_screen_provider.dart';
-import 'package:provider/provider.dart';
 import 'package:metabugo/presentation/views/sign_in.dart';
 import 'package:metabugo/res/media_res.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider<HomeScreenProvider>(
-      create: (context) => HomeScreenProvider(), // Provider 생성
-      child: _HomeScreenContent(), // 실제 화면을 구성하는 위젯
-    );
-  }
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenContent extends StatelessWidget {
+
+
+class _HomeScreenState extends State<HomeScreen> {
+  Color _textUnderLineColor1 = MediaRes.textUnderLineColor;
+  Color _textUnderLineColor2 = MediaRes.textUnderLineColor;
+  Color _textUnderLineColor3 = MediaRes.textUnderLineColor;
+
+  Color _textColor1 = MediaRes.blockColor;
+  Color _textColor2 = MediaRes.blockColor;
+  Color _textColor3 = MediaRes.blockColor;
+
+
+
   @override
   Widget build(BuildContext context) {
-    var homeScreenProvider = Provider.of<HomeScreenProvider>(context); // Provider로부터 상태 가져오기
 
     return Scaffold(
       appBar: AppBar(
@@ -37,7 +41,7 @@ class _HomeScreenContent extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context)=>SignIn()),
-              );
+              );// 로그인하기 버튼이 눌렸을 때의 동작 추가
             },
             child: Text(
               '로그인하기',
@@ -55,7 +59,7 @@ class _HomeScreenContent extends StatelessWidget {
         children: [
           Padding(
             padding:
-            const EdgeInsets.only(left: 16, right: 16, top: 12, bottom: 20),
+                const EdgeInsets.only(left: 16, right: 16, top: 12, bottom: 20),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
@@ -70,16 +74,19 @@ class _HomeScreenContent extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () {
-                  homeScreenProvider.updateTextUnderLineColor1(MediaRes.selectColor);
-                  homeScreenProvider.resetButtonState(2);
-                  homeScreenProvider.resetButtonState(3);
+                  setState(() {
+                    _textUnderLineColor1 = MediaRes.selectColor;
+                    _textUnderLineColor2 = MediaRes.textUnderLineColor;
+                    _textUnderLineColor3 = MediaRes.textUnderLineColor;
+
+                  });
                 },
                 child: Container(
                   padding: EdgeInsets.only(bottom: 12),
                   decoration: BoxDecoration(
                     border: Border(
                       bottom: BorderSide(
-                        color: homeScreenProvider.textUnderLineColor1,
+                        color: _textUnderLineColor1, // 동적으로 변경된 밑줄 색상
                         width: 1.0,
                       ),
                     ),
@@ -92,7 +99,7 @@ class _HomeScreenContent extends StatelessWidget {
                       style: TextStyle(
                         fontSize: MediaRes.fontSize18,
                         fontWeight: FontWeight.w500,
-                        color: homeScreenProvider.textUnderLineColor1 == MediaRes.selectColor ? MediaRes.selectColor : MediaRes.blockColor,
+                        color: _textUnderLineColor1 == MediaRes.selectColor ? MediaRes.selectColor : MediaRes.blockColor,
                       ),
                     ),
                   ),
@@ -100,16 +107,19 @@ class _HomeScreenContent extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  homeScreenProvider.updateTextUnderLineColor2(MediaRes.selectColor);
-                  homeScreenProvider.resetButtonState(1);
-                  homeScreenProvider.resetButtonState(3);
+                  setState(() {
+                    _textUnderLineColor1 = MediaRes.textUnderLineColor;
+                    _textUnderLineColor2 = MediaRes.selectColor;
+                    _textUnderLineColor3 = MediaRes.textUnderLineColor;
+
+                  });
                 },
                 child: Container(
                   padding: EdgeInsets.only(bottom: 12),
                   decoration: BoxDecoration(
                     border: Border(
                       bottom: BorderSide(
-                        color: homeScreenProvider.textUnderLineColor2,
+                        color: _textUnderLineColor2,
                         width: 1.0,
                       ),
                     ),
@@ -122,7 +132,7 @@ class _HomeScreenContent extends StatelessWidget {
                       style: TextStyle(
                         fontSize: MediaRes.fontSize18,
                         fontWeight: FontWeight.w500,
-                        color: homeScreenProvider.textUnderLineColor2 == MediaRes.selectColor ? MediaRes.selectColor : MediaRes.blockColor,
+                        color: _textUnderLineColor2 == MediaRes.selectColor ? MediaRes.selectColor : MediaRes.blockColor,
                       ),
                     ),
                   ),
@@ -130,16 +140,18 @@ class _HomeScreenContent extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  homeScreenProvider.updateTextUnderLineColor3(MediaRes.selectColor);
-                  homeScreenProvider.resetButtonState(1);
-                  homeScreenProvider.resetButtonState(2);
+                  setState(() {
+                    _textUnderLineColor1 = MediaRes.textUnderLineColor;
+                    _textUnderLineColor2 = MediaRes.textUnderLineColor;
+                    _textUnderLineColor3 = MediaRes.selectColor;
+                  });
                 },
                 child: Container(
                   padding: EdgeInsets.only(bottom: 12),
                   decoration: BoxDecoration(
                     border: Border(
                       bottom: BorderSide(
-                        color: homeScreenProvider.textUnderLineColor3,
+                        color: _textUnderLineColor3,
                         width: 1.0,
                       ),
                     ),
@@ -152,7 +164,7 @@ class _HomeScreenContent extends StatelessWidget {
                       style: TextStyle(
                         fontSize: MediaRes.fontSize18,
                         fontWeight: FontWeight.w500,
-                        color: homeScreenProvider.textUnderLineColor3 == MediaRes.selectColor ? MediaRes.selectColor : MediaRes.blockColor,
+                        color: _textUnderLineColor3 == MediaRes.selectColor ? MediaRes.selectColor : MediaRes.blockColor,
                       ),
                     ),
                   ),

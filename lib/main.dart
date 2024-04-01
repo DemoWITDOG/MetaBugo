@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:metabugo/presentation/views/home_screen.dart';
+import 'package:metabugo/presentation/views/signUpWithPhone.dart';
 import 'package:metabugo/presentation/views/sign_in.dart';
 import 'package:metabugo/presentation/views/splash_screen.dart';
 
@@ -14,7 +16,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
+      home: SignUpWithPhone(),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('ko', 'KR'),
+        // include country code too
+      ],
     );
   }
 }

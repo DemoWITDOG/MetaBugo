@@ -13,6 +13,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.1.2
   kakao_flutter_sdk: ^1.9.1+2
+  date_picker_plus: ^3.0.2
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.0
 
 dev_dependencies:
   flutter_test:

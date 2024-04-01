@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:metabugo/presentation/views/signUpWithPhone.dart';
 import 'package:metabugo/presentation/views/sign_in.dart';
 import 'package:metabugo/res/media_res.dart';
 
@@ -33,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           style: TextStyle(
             fontFamily: 'Pretendard',
             fontWeight: FontWeight.w500,
-            fontSize:  MediaRes.fontSize20,
+            fontSize: MediaRes.fontSize20,
           ),
         ),
         actions: [
@@ -74,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Column(
             children: [
               TextButton(
-                onPressed: () { Navigator.push(context,MaterialPageRoute(builder: (context)=>SignUpWithPhone()));
+                onPressed: () {
                   setState(() {
                     _textUnderLineColor1 = MediaRes.selectColor;
                     _textUnderLineColor2 = MediaRes.textUnderLineColor;

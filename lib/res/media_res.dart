@@ -22,7 +22,7 @@ class MediaRes{
   // color
   static const int _splashMainColor = 0xfff5efe8;
   static const int _whiteColor = 0xffFFFFFF ;
-  static const int _blockColor = 0xff201d1d;
+  static const int _blackColor = 0xff201d1d;
   static const int _textUnderLineColor = 0xffdddddd;
   static const int _blueColor = 0xff0094ff;
   static const int _blueText = 0xff2295FF;
@@ -41,7 +41,7 @@ class MediaRes{
 
   static Color get splashMainColor => Color(_splashMainColor);
   static Color get whiteColor => Color(_whiteColor);
-  static Color get blockColor => Color(_blockColor);
+  static Color get blackColor => Color(_blackColor);
   static Color get textUnderLineColor => Color(_textUnderLineColor);
   static Color get blueColor => Color(_blueColor);
   static Color get blueText => Color(_blueText);

@@ -32,6 +32,8 @@ class MediaRes{
   static const int _redText = 0xffFF1818;
   static const int _redAlertText = 0xffEA2727;
   static const int _bugoPannel = 0xff3B3737 ;
+  static const int _greyText2 = 0xffB2B2B2; // 색상 찾기
+
 
   static const int _mainBtnColor = 0xff9F836A;
   static const int _kakaoBtnColor = 0xffFFEB3B;
@@ -51,6 +53,8 @@ class MediaRes{
   static Color get redText => Color(_redText);
   static Color get redAlertText => Color(_redAlertText);
   static Color get bugoPannel => Color(_bugoPannel);
+  static Color get greyText2 => Color(_greyText2);
+
 
   static Color get mainBtnColor => Color(_mainBtnColor);
   static Color get kakaoBtnColor => Color(_kakaoBtnColor);

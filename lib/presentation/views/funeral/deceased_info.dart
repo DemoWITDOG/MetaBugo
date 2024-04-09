@@ -17,7 +17,7 @@ class DeceasedInfo extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 8,),
+            SizedBox(height: 20,),
             Row(
               children: [
                 Text('고인정보',

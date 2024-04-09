@@ -11,7 +11,7 @@ class SignUpWithPhone extends StatefulWidget {
 
 class _SignUpWithPhoneState extends State<SignUpWithPhone> {
   TextEditingController _dateController = TextEditingController();
-DateTime? _selectedDate;
+  DateTime? _selectedDate;
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
         context: context,

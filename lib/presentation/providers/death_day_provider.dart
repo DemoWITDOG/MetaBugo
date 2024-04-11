@@ -9,7 +9,6 @@ class DeathDayProvider with ChangeNotifier {
 
   TextEditingController get dateController => _dateController;
   DateTime? get selectedDate => _selectedDate;
-
   int get currentIntValue => _currentIntValue;
 
   Future<void> selectDatePicker(BuildContext context) async {

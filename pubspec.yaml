@@ -19,7 +19,6 @@ dependencies:
   intl: ^0.18.0
   numberpicker: ^2.1.2
   timer_count_down: ^2.2.2
-  app_bar_with_search_switch: ^1.8.5
 
 dev_dependencies:
   flutter_test:

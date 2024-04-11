@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:metabugo/presentation/providers/account_add_provider.dart';
+import 'package:metabugo/presentation/providers/death_day_provider.dart';
+import 'package:metabugo/presentation/providers/funeral_selected_provider.dart';
 import 'package:metabugo/presentation/providers/home_screen_provider.dart';
-import 'package:metabugo/presentation/views/home_screen.dart';
-import 'package:metabugo/presentation/views/search_funeral.dart';
+import 'package:metabugo/presentation/providers/hour_provider.dart';
+import 'package:metabugo/presentation/providers/minute_provider.dart';
 import 'package:metabugo/presentation/views/splash_screen.dart';
+
 import 'package:provider/provider.dart';
 
 
@@ -19,9 +22,14 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
+        ChangeNotifierProvider(create: (_) => DeathDayProvider()),
+        ChangeNotifierProvider(create: (_) => HourProvider()),
+        ChangeNotifierProvider(create: (_) => MinuteProvider()),
+        ChangeNotifierProvider(create: (_) => FuneralSelectedProvider()),
+        ChangeNotifierProvider(create: (_) => AccountAddProvider()),
       ],
       child: MaterialApp(
-        home: SearchFuneral(),
+        home: SplashScreen(),
       ), /*SignUpWithPhone(),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,

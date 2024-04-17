@@ -22,6 +22,7 @@ class _SignInContent extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: MediaRes.whiteColor,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);

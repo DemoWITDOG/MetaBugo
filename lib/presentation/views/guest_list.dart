@@ -7,7 +7,9 @@ class GuestList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MediaRes.whiteColor,
       appBar: AppBar(
+        backgroundColor: MediaRes.whiteColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);

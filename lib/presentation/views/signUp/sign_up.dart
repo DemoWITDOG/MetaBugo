@@ -12,9 +12,10 @@ class SignUp extends StatelessWidget {
     final datePickerProvider = Provider.of<DatePickerProvider>(context);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: MediaRes.whiteColor,
         title: Text('본인인증하기'),
         leading:
-        IconButton(onPressed: () {}, icon: Icon(Icons.keyboard_arrow_left)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.keyboard_arrow_left)),
         titleSpacing: 0,
       ),
       body: Container(
@@ -52,7 +53,7 @@ class SignUp extends StatelessWidget {
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                          BorderSide(color: MediaRes.textUnderLineColor),
+                              BorderSide(color: MediaRes.textUnderLineColor),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -60,7 +61,7 @@ class SignUp extends StatelessWidget {
                         ),
                         isDense: true,
                         contentPadding:
-                        EdgeInsets.symmetric(vertical: 16, horizontal: 12)),
+                            EdgeInsets.symmetric(vertical: 16, horizontal: 12)),
                   ),
                   SizedBox(
                     height: 12,
@@ -70,7 +71,7 @@ class SignUp extends StatelessWidget {
                     child: TextField(
                       controller: datePickerProvider.dateController,
                       onTap: () {
-                         datePickerProvider.selectDatePicker(context);
+                        datePickerProvider.selectDatePicker(context);
                         //_selectDate(context);
                       },
                       decoration: InputDecoration(
@@ -82,12 +83,12 @@ class SignUp extends StatelessWidget {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide:
-                            BorderSide(color: MediaRes.textUnderLineColor),
+                                BorderSide(color: MediaRes.textUnderLineColor),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide:
-                            BorderSide(color: MediaRes.greyBtnColor),
+                                BorderSide(color: MediaRes.greyBtnColor),
                           ),
                           isDense: true,
                           contentPadding: EdgeInsets.symmetric(
@@ -108,7 +109,7 @@ class SignUp extends StatelessWidget {
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                          BorderSide(color: MediaRes.textUnderLineColor),
+                              BorderSide(color: MediaRes.textUnderLineColor),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -116,18 +117,15 @@ class SignUp extends StatelessWidget {
                         ),
                         isDense: true,
                         contentPadding:
-                        EdgeInsets.symmetric(vertical: 16, horizontal: 12)),
+                            EdgeInsets.symmetric(vertical: 16, horizontal: 12)),
                   ),
                 ],
               ),
             ),
             Expanded(
                 child: Container(
-                  height: MediaQuery
-                      .of(context)
-                      .size
-                      .height * 0.44,
-                )),
+              height: MediaQuery.of(context).size.height * 0.44,
+            )),
             Container(
               width: double.infinity,
               height: 56,
@@ -136,9 +134,9 @@ class SignUp extends StatelessWidget {
                       backgroundColor: MediaRes.blackBtnColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(0))),
-                  onPressed: () =>
-                      showModalBottomSheet(
-                          context: context, builder: (BuildContext context) {
+                  onPressed: () => showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
                         return AuthPhone();
                       }),
                   child: Text(

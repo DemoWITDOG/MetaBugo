@@ -10,12 +10,14 @@ class BugoMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MediaRes.whiteColor,
       appBar: AppBar(
+        backgroundColor: MediaRes.whiteColor,
         title: Text(
           '메타부고',
           style: TextStyle(
             fontFamily: 'Pretendard',
-            fontWeight: FontWeight.w500,
+            fontWeight: MediaRes.medium,
             fontSize: MediaRes.fontSize20,
           ),
         ),
@@ -31,7 +33,7 @@ class BugoMain extends StatelessWidget {
               '로그인하기',
               style: TextStyle(
                 fontFamily: 'Pretendard',
-                fontWeight: FontWeight.w500,
+                fontWeight: MediaRes.medium,
                 fontSize: MediaRes.fontSize18,
                 color: MediaRes.blueColor,
               ),
@@ -46,10 +48,7 @@ class BugoMain extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width * 0.91,
+                width: MediaQuery.of(context).size.width * 0.91,
                 height: 210,
                 child: Stack(
                   children: [
@@ -73,20 +72,14 @@ class BugoMain extends StatelessWidget {
                     Positioned(
                         bottom: 0,
                         child: SizedBox(
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.91,
+                          width: MediaQuery.of(context).size.width * 0.91,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   minimumSize: Size(
-                                      MediaQuery
-                                          .of(context)
-                                          .size
-                                          .width * 0.91,
+                                      MediaQuery.of(context).size.width * 0.91,
                                       53),
-                                  backgroundColor: Colors.black.withOpacity(
-                                      0.4),
+                                  backgroundColor:
+                                      Colors.black.withOpacity(0.4),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(8),
@@ -114,10 +107,7 @@ class BugoMain extends StatelessWidget {
                 height: 15,
               ),
               Container(
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width * 0.91,
+                width: MediaQuery.of(context).size.width * 0.91,
                 height: 210,
                 child: Stack(
                   children: [
@@ -141,26 +131,24 @@ class BugoMain extends StatelessWidget {
                     Positioned(
                         bottom: 0,
                         child: SizedBox(
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.91,
+                          width: MediaQuery.of(context).size.width * 0.91,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   minimumSize: Size(
-                                      MediaQuery
-                                          .of(context)
-                                          .size
-                                          .width * 0.91,
+                                      MediaQuery.of(context).size.width * 0.91,
                                       53),
-                                  primary: Colors.black.withOpacity(0.4),
+                                  backgroundColor:
+                                      Colors.black.withOpacity(0.4),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(8),
                                           bottomRight: Radius.circular(8)))),
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(
-                                  builder: (context) => ManageFuneral(),));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ManageFuneral(),
+                                    ));
                               },
                               child: Text(
                                 '장례식장 관리하기',

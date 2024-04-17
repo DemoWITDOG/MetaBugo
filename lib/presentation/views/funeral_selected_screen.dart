@@ -25,7 +25,7 @@ class FuneralSelectedScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '부고장 선택하기',
+                '부고 선택하기',
                 style: TextStyle(
                   color: MediaRes.blackColor,
                   fontWeight: MediaRes.medium,

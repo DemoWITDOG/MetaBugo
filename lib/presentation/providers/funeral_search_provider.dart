@@ -1,11 +1,22 @@
-import 'package:flutter/cupertino.dart';
-import 'package:metabugo/res/media_res.dart';
 
-class FuneralProvider extends ChangeNotifier{
+import 'package:flutter/material.dart';
 
-/*  Future<void> fetchData() async{
-    final apiKey='QdtoAQ0dVV/s6QofBHqPTkki2EvgJ4OxaZmzSeZ/+ocvxviFB1mUQ6DeUi8SrM6SvolO+4o+FP7PwcOnUMFNnQ==';
-    final apiUrl='http://apis.data.go.kr/1352000/ODMS_DATA_04';
-  }*/
+class FuneralSearchProvider extends ChangeNotifier {
+  String _searchKeyword = ''; // 검색어 저장 변수
+  bool _isSearching = false; // 검색 여부를 나타내는 변수
 
+  // Getter 메서드
+  String get searchKeyword => _searchKeyword;
+  bool get isSearching => _isSearching;
+
+  // Setter 메서드
+  void setSearchKeyword(String keyword) {
+    _searchKeyword = keyword;
+    notifyListeners(); // 상태 변경을 알림
+  }
+
+  void setIsSearching(bool searching) {
+    _isSearching = searching;
+    notifyListeners(); // 상태 변경을 알림
+  }
 }

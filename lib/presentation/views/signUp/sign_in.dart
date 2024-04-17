@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/presentation/providers/auto_sign_in_provider.dart';
+import 'package:metabugo/presentation/viewmodels/auth_viewmodel.dart';
 import 'package:metabugo/res/media_res.dart';
 import 'package:provider/provider.dart';
 
@@ -18,11 +19,11 @@ class SignIn extends StatelessWidget {
 class _SignInContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final autoSignInProvider = Provider.of<AutoSignInProvider>(context);
+    final authViewModel = Provider.of<AuthViewModel>(context, listen: false);
+    final phoneController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MediaRes.whiteColor,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -49,6 +50,7 @@ class _SignInContent extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(left: 16, right: 16),
                   child: TextField(
+                    controller: phoneController,
                     keyboardType: TextInputType.number,
                     style: TextStyle(
                       fontWeight: MediaRes.medium,
@@ -64,7 +66,7 @@ class _SignInContent extends StatelessWidget {
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              BorderSide(color: MediaRes.textUnderLineColor),
+                          BorderSide(color: MediaRes.textUnderLineColor),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -72,7 +74,7 @@ class _SignInContent extends StatelessWidget {
                         ),
                         isDense: true,
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 16, horizontal: 12)),
+                        EdgeInsets.symmetric(vertical: 16, horizontal: 12)),
                   ),
                 ),
               ),
@@ -87,7 +89,11 @@ class _SignInContent extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(left: 16, right: 16),
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        final phoneNumber = phoneController.text;
+                        authViewModel.login(phoneNumber);
+
+                      },
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(0, 56),
                         backgroundColor: MediaRes.mainBtnColor,

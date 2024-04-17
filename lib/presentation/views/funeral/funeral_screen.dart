@@ -28,7 +28,7 @@ class FuneralScreen extends StatelessWidget {
             icon: Icon(Icons.keyboard_arrow_left),
           ),
           title: Text(
-            '부고장 작성하기',
+            '부고 작성하기',
             style: TextStyle(
               color: MediaRes.blackColor,
               fontWeight: MediaRes.medium,

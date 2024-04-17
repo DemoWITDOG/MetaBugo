@@ -7,7 +7,9 @@ class MoneyList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MediaRes.whiteColor,
       appBar: AppBar(
+        backgroundColor: MediaRes.whiteColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -57,7 +59,6 @@ class MoneyList extends StatelessWidget {
                     child: Text(
                       '총금액',
                       style: TextStyle(
-                        //color: MediaRes.whiteColor,
                         color: Colors.white70,
                         //color: Colors.white.withOpacity(0.6),
                         fontSize: MediaRes.fontSize18,
@@ -121,7 +122,9 @@ class MoneyList extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-                        child: Divider(color: MediaRes.textUnderLineColor,),
+                        child: Divider(
+                          color: MediaRes.textUnderLineColor,
+                        ),
                       )
                     ],
                   );

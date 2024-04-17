@@ -28,9 +28,12 @@ class _HomeScreenContent extends StatelessWidget {
         Provider.of<HomeScreenProvider>(context); // Provider로부터 상태 가져오기
 
     return Scaffold(
+      backgroundColor: MediaRes.whiteColor,
       appBar: AppBar(
+        backgroundColor: MediaRes.whiteColor,
+        automaticallyImplyLeading: false,
         title: Text(
-          '부고앱',
+          '메타부고',
           style: TextStyle(
             fontFamily: 'Pretendard',
             fontWeight: FontWeight.w500,
@@ -99,7 +102,7 @@ class _HomeScreenContent extends StatelessWidget {
                   height: 50,
                   child: Center(
                     child: Text(
-                      '부고장 작성하기',
+                      '부고 작성하기',
                       style: TextStyle(
                         fontSize: MediaRes.fontSize18,
                         fontWeight: FontWeight.w500,
@@ -115,7 +118,8 @@ class _HomeScreenContent extends StatelessWidget {
                       .updateTextUnderLineColor2(MediaRes.selectColor);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => FuneralSendListScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => FuneralSendListScreen()),
                   ).then((_) {
                     homeScreenProvider.resetColors();
                   });
@@ -134,7 +138,7 @@ class _HomeScreenContent extends StatelessWidget {
                   height: 50,
                   child: Center(
                     child: Text(
-                      '부고장보낸내역확인하기',
+                      '부고 보낸 내역 확인하기',
                       style: TextStyle(
                         fontSize: MediaRes.fontSize18,
                         fontWeight: FontWeight.w500,
@@ -154,7 +158,7 @@ class _HomeScreenContent extends StatelessWidget {
                   ).then((_) {
                     homeScreenProvider.resetColors();
                   });
-                  },
+                },
                 child: Container(
                   padding: EdgeInsets.only(bottom: 12),
                   decoration: BoxDecoration(
@@ -169,7 +173,7 @@ class _HomeScreenContent extends StatelessWidget {
                   height: 50,
                   child: Center(
                     child: Text(
-                      '화환내역확인하기',
+                      '화환 내역 확인하기',
                       style: TextStyle(
                         fontSize: MediaRes.fontSize18,
                         fontWeight: FontWeight.w500,

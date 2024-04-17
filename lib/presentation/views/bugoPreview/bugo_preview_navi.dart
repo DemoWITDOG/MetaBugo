@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
-import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 import 'package:metabugo/presentation/views/bugoPreview/bugo_preview_map.dart';
 import 'package:metabugo/res/media_res.dart';
 

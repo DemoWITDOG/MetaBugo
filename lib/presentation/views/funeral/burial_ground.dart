@@ -23,11 +23,11 @@ class BurialGround extends StatelessWidget {
                 ),
               ),
               Text(
-                '(필수)',
+                '(선택)',
                 style: TextStyle(
                   fontSize: MediaRes.fontSize18,
                   fontWeight: MediaRes.medium,
-                  color: MediaRes.redText,
+                  color: MediaRes.blueText,
                 ),
               ),
             ],

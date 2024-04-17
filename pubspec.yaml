@@ -19,6 +19,11 @@ dependencies:
   intl: ^0.18.0
   numberpicker: ^2.1.2
   timer_count_down: ^2.2.2
+  xml2json: ^6.2.3
+  dio: ^5.4.2+1
+  xml: ^6.5.0
+  supabase_flutter: ^2.5.0
+  kakao_map_plugin: ^0.3.0
 
 dev_dependencies:
   flutter_test:

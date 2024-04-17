@@ -38,8 +38,8 @@ class AuthViewModel extends ChangeNotifier {
   // 회원 가입 기능
   Future<void> signUp(String userPhone) async {
     try {
-      final response = await supabaseClient.from('user_phone').insert({'user_phone':userPhone});
-
+      final response = await supabaseClient.from('auth_phone').insert({'user_phone':userPhone});
+      print('signUp ${response}');
       if(response == null) {
         print('회원가입 성공 : ${response}');
       } else {

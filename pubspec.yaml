@@ -23,6 +23,8 @@ dependencies:
   dio: ^5.4.2+1
   xml: ^6.5.0
   supabase_flutter: ^2.5.0
+  webview_flutter: ^4.7.0
+  flutter_inappwebview: ^5.8.0
   kakao_map_plugin: ^0.3.0
 
 dev_dependencies:

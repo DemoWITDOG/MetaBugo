@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/res/media_res.dart';
 
-class CancelModifyDialog extends StatelessWidget {
-  const CancelModifyDialog({super.key});
+class LogoutDialog extends StatelessWidget {
+  const LogoutDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class CancelModifyDialog extends StatelessWidget {
       ),
       child: Container(
         width: 294,
-        height: 252,
+        height: 180,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -20,7 +20,7 @@ class CancelModifyDialog extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                '취소/수정가능',
+                '로그아웃',
                 style: TextStyle(
                   fontSize: MediaRes.fontSize22,
                   fontWeight: MediaRes.semiBold,
@@ -30,7 +30,7 @@ class CancelModifyDialog extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                '원하는 메뉴를 선택해 주세요',
+                '로그아웃 되었습니다',
                 style: TextStyle(
                   fontSize: MediaRes.fontSize18,
                   fontWeight: MediaRes.medium,
@@ -46,31 +46,10 @@ class CancelModifyDialog extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  backgroundColor: MediaRes.mainBtnColor,
-                ),
-                child: Text(
-                  '부고 취소하기',
-                  style: TextStyle(
-                    color: MediaRes.whiteColor,
-                    fontFamily: MediaRes.fontPretendard,
-                    fontSize: MediaRes.fontSize18,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 56),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
                   backgroundColor: MediaRes.blackColor,
                 ),
                 child: Text(
-                  '부고 수정하기',
+                  '확인',
                   style: TextStyle(
                     color: MediaRes.whiteColor,
                     fontFamily: MediaRes.fontPretendard,

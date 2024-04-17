@@ -83,7 +83,7 @@ class FuneralSendListScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 5),
                           Text(
-                            '(홍길동 (87/남)',
+                            '홍길동 (87/남)',
                             style: TextStyle(
                               fontSize: MediaRes.fontSize14,
                               fontWeight: MediaRes.medium,

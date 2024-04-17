@@ -6,6 +6,8 @@ class MediaRes{
   // base images path
   static const String _baseSplashImage = 'assets/images/splash_images';
   static const String _baseImagePath = 'assets/images';
+  static const String _baseMainImage = 'assets/images/main_images';
+  static const String _baseManageImage = 'assets/images/manage_funeral_images';
 
   // image path
 
@@ -13,11 +15,19 @@ class MediaRes{
   static const _splash = '$_baseSplashImage/splash.png';
   static const _kakao = '$_baseSplashImage/kakao.png';
   static const _flowerIcon = '$_baseImagePath/flower_icon.png';
+  static const _makeBugo = '$_baseMainImage/make_bugo.png';
+  static const _manage = '$_baseMainImage/manage.png';
+  static const _moneyList = '$_baseManageImage/money_list.png';
+  static const _guest_book = '$_baseManageImage/guest_book.png';
 
   static String get candle => _candle;
   static String get splash => _splash;
   static String get kakao => _kakao;
   static String get flowerIcon => _flowerIcon;
+  static String get makeBugo => _makeBugo;
+  static String get manage => _manage;
+  static String get moneyList => _moneyList;
+  static String get guest_book => _guest_book;
 
   // color
   static const int _splashMainColor = 0xfff5efe8;
@@ -32,7 +42,8 @@ class MediaRes{
   static const int _redText = 0xffFF1818;
   static const int _redAlertText = 0xffEA2727;
   static const int _bugoPannel = 0xff3B3737 ;
-  static const int _greyText2 = 0xffB2B2B2; // 색상 찾기
+  static const int _greyText2 = 0xffB2B2B2;
+  static const int _greyTextSearch = 0xff898989; // 색상 찾기
 
 
   static const int _mainBtnColor = 0xff9F836A;
@@ -54,6 +65,7 @@ class MediaRes{
   static Color get redAlertText => Color(_redAlertText);
   static Color get bugoPannel => Color(_bugoPannel);
   static Color get greyText2 => Color(_greyText2);
+  static Color get greyTextSearch => Color(_greyTextSearch);
 
 
   static Color get mainBtnColor => Color(_mainBtnColor);
@@ -66,11 +78,13 @@ class MediaRes{
   static const FontWeight _medium = FontWeight.w500;
   static const FontWeight _semiBold = FontWeight.w600;
   static const FontWeight _bold = FontWeight.w700;
+  static const FontWeight _extraBold = FontWeight.w800;
 
   static FontWeight get regular => _regular;
   static FontWeight get medium => _medium;
   static FontWeight get semiBold => _semiBold;
   static FontWeight get bold => _bold;
+  static FontWeight get extraBold => _extraBold;
 
   //font size
   static double get fontSize14  => 14 ;
@@ -86,32 +100,4 @@ class MediaRes{
 
   static String get fontKoPubBatang=>_fontKoPubBatang;
   static String get fontPretendard=>_fontPretendard;
-
-  // font styles
-  static TextStyle _regularTextStyle = TextStyle(
-    fontFamily: _fontKoPubBatang,
-    fontWeight: _regular,
-  );
-
-  static TextStyle semiTextStyle = TextStyle(
-    fontFamily: _fontKoPubBatang,
-    fontWeight: _semiBold
-  );
-
-  static TextStyle pretendardBold = TextStyle(
-      fontFamily: _fontPretendard,
-      fontWeight: _bold
-  );
-  static TextStyle pretendardMedium = TextStyle(
-      fontFamily: _fontPretendard,
-      fontWeight: _medium
-  );
-  static TextStyle pretendardRegular = TextStyle(
-      fontFamily: _fontPretendard,
-      fontWeight: _regular
-  );
-  static TextStyle pretendardSemiBold = TextStyle(
-      fontFamily: _fontPretendard,
-      fontWeight: _semiBold
-  );
 }

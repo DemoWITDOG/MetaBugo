@@ -24,7 +24,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.0
+  lints: ^2.0.0
 
 flutter:
   uses-material-design: true
@@ -54,3 +54,8 @@ flutter:
     - assets/images/splash_images/splash.png
     - assets/images/kakao.png
     - assets/images/flower_icon.png
+    - assets/images/main_images/make_bugo.png
+    - assets/images/main_images/manage.png
+    - assets/images/manage_funeral_images/money_list.png
+    - assets/images/manage_funeral_images/guest_book.png
+

@@ -40,7 +40,7 @@ class AuthPhone extends StatelessWidget {
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide:
-                            BorderSide(color: MediaRes.textUnderLineColor),
+                        BorderSide(color: MediaRes.textUnderLineColor),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),

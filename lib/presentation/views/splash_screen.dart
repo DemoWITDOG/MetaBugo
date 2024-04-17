@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:metabugo/presentation/views/bugo_main.dart';
 import 'package:metabugo/presentation/views/home_screen.dart';
 import 'package:metabugo/res/media_res.dart';
 
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState(){
     super.initState();
     Timer(Duration(seconds:2), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context) => HomeScreen(), ));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context) => BugoMain(), ));
     });
   }
   @override

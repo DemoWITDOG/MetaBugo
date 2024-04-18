@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:metabugo/presentation/views/bugoPreview/bugo_preview_map.dart';
 import 'package:metabugo/res/media_res.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class BugoPreviewNavi extends StatelessWidget {
   const BugoPreviewNavi({Key? key});
@@ -9,7 +11,7 @@ class BugoPreviewNavi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
       child: Container(
         height: 506,
         decoration: BoxDecoration(
@@ -24,7 +26,8 @@ class BugoPreviewNavi extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 12.0, left: 10.0, bottom: 7.0),
+                padding:
+                    const EdgeInsets.only(top: 12.0, left: 10.0, bottom: 7.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,22 +60,107 @@ class BugoPreviewNavi extends StatelessWidget {
               ),
               // kakaoNavi
               BugoPreviewMap(),
+              SizedBox(
+                height: 14,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 4.0),
+                  child: Text(
+                    '네비게이션',
+                    style: TextStyle(
+                      fontFamily: MediaRes.fontPretendard,
+                      fontWeight: MediaRes.medium,
+                      fontSize: MediaRes.fontSize18,
+                      color: MediaRes.blackColor,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 8,
+              ),
               InkWell(
                 onTap: () {
-                  _launchKakaoNavi();
+                  _launchKakaoNavi(context);
                 },
                 child: Container(
-                  height: 40,
+                  height: 56,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: Colors.blue, // 버튼 색상 설정
-                  ),
+                      borderRadius: BorderRadius.circular(8),
+                      color: MediaRes.whiteColor,
+                      border: Border.all(color: MediaRes.textUnderLineColor)),
                   child: Center(
                     child: Text(
                       '카카오 네비게이션 열기',
                       style: TextStyle(
-                        color: Colors.white, // 버튼 텍스트 색상 설정
+                        fontFamily: MediaRes.fontPretendard,
+                        fontWeight: MediaRes.medium,
+                        fontSize: MediaRes.fontSize18,
+                        color: MediaRes.blackColor, // 버튼 텍스트 색상 설정
                       ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              InkWell(
+                onTap: () {
+                },
+                child: Container(
+                  height: 56,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: MediaRes.whiteColor,
+                      border: Border.all(color: MediaRes.textUnderLineColor)),
+                  child: Center(
+                    child: Text(
+                      '티맵 네비게이션 열기',
+                      style: TextStyle(
+                        fontFamily: MediaRes.fontPretendard,
+                        fontWeight: MediaRes.medium,
+                        fontSize: MediaRes.fontSize18,
+                        color: MediaRes.blackColor, // 버튼 텍스트 색상 설정
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 23,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 4.0),
+                  child: Text(
+                    '주소',
+                    style: TextStyle(
+                      fontFamily: MediaRes.fontPretendard,
+                      fontWeight: MediaRes.medium,
+                      fontSize: MediaRes.fontSize18,
+                      color: MediaRes.blackColor,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 4.0),
+                  child: Text(
+                    '경기 화성시 향남읍 발안로 322',
+                    style: TextStyle(
+                      fontFamily: MediaRes.fontPretendard,
+                      fontWeight: MediaRes.medium,
+                      fontSize: MediaRes.fontSize18,
+                      color: MediaRes.blackColor,
                     ),
                   ),
                 ),
@@ -84,7 +172,7 @@ class BugoPreviewNavi extends StatelessWidget {
     );
   }
 
-  void _launchKakaoNavi() async {
+  void _launchKakaoNavi(BuildContext context) async {
     final location = Location(
       name: '카카오 판교오피스',
       x: '127.108640',
@@ -95,11 +183,22 @@ class BugoPreviewNavi extends StatelessWidget {
       if (installed) {
         await NaviApi.instance.navigate(destination: location);
       } else {
-        // 카카오 네비게이션이 설치되어 있지 않을 때 처리
-        // 예를 들어 다른 네비게이션 앱을 열거나 설치 유도 메시지 표시 등
+        final url = 'https://play.google.com/store/search?q=%EC%B9%B4%EC%B9%B4%EC%98%A4%EB%84%A4%EB%B9%84&c=apps&hl=ko&gl=US';
+        if (await canLaunchUrlString(url)) {
+          await launchUrlString(url);
+        } else {
+          throw 'Could not launch $url';
+        }
       }
     } catch (e) {
       // 예외 처리
+      print('네비게이션 오류: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('네비게이션을 열 수 없습니다.'),
+        ),
+      );
     }
   }
+
 }

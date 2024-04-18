@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 
+// TODO : 임의 데이터라서 Rest로 교체 필요
 class BugoPreviewMap extends StatefulWidget {
   const BugoPreviewMap({Key? key}) : super(key: key);
 
@@ -14,7 +15,7 @@ class _BugoPreviewMapState extends State<BugoPreviewMap> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: 200,
       child: Container(

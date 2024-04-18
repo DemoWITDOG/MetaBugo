@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 import 'package:metabugo/presentation/providers/account_add_provider.dart';
-import 'package:metabugo/presentation/providers/auto_sign_in_provider.dart';
 import 'package:metabugo/presentation/providers/datepicker_provider.dart';
 import 'package:metabugo/presentation/providers/death_day_provider.dart';
 import 'package:metabugo/presentation/providers/funeral_search_provider.dart';
@@ -13,7 +12,7 @@ import 'package:metabugo/presentation/providers/minute_provider.dart';
 import 'package:metabugo/presentation/viewmodels/auth_viewmodel.dart';
 import 'package:metabugo/presentation/viewmodels/furneral_viewmodel.dart';
 import 'package:metabugo/presentation/views/bugoPreview/bugo_preview_screen.dart';
-import 'package:metabugo/presentation/views/signUp/sign_up.dart';
+
 import 'package:metabugo/utils/constants.dart';
 
 import 'package:provider/provider.dart';
@@ -33,7 +32,6 @@ Future<void> main() async {
     nativeAppKey: Constants.nativeAppkey,
     javaScriptAppKey: Constants.javascriptAppkey,
   );
-
 
   runApp(const MyApp());
 }
@@ -57,7 +55,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => DatePickerProvider()),
       ],
       child: MaterialApp(
-        home: SignUp(),
+        debugShowCheckedModeBanner: false,
+        home: BugoPreViewScreen(),
       ), /*SignUpWithPhone(),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,

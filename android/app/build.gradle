@@ -4,6 +4,17 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // Tmap의 repository 추가
+        maven {
+            url = "https://devrepo.tmapadmin.com/repository/tmap-sdk-release/"
+        }
+    }
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -51,6 +62,10 @@ android {
         versionName flutterVersionName
         minSdkVersion 21
 
+    }
+
+    dataBinding {
+        enabled = true
     }
 
     buildTypes {

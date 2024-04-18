@@ -48,7 +48,7 @@ class DeathDay extends StatelessWidget {
               deathDayProvider.selectDatePicker(context);
             },
             decoration: InputDecoration(
-                hintText: 'YYYY/MM/DD',
+                hintText: '날짜를 선택해 주세요',
                 hintStyle: TextStyle(
                     color: MediaRes.greyColor,
                     fontFamily: MediaRes.fontPretendard,

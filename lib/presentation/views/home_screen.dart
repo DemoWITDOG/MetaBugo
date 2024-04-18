@@ -4,7 +4,7 @@ import 'package:metabugo/presentation/views/account/account_add_screen.dart';
 import 'package:metabugo/presentation/views/funeral/funeral_screen.dart';
 import 'package:metabugo/presentation/views/funeral_send_list_screen.dart';
 import 'package:metabugo/presentation/views/privacy_agreement_modal.dart';
-import 'package:metabugo/presentation/views/sendFlower.dart';
+import 'package:metabugo/presentation/views/send_flower.dart';
 import 'package:metabugo/presentation/views/signUp/sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:metabugo/res/media_res.dart';

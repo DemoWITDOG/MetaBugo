@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/presentation/views/home_screen.dart';
 import 'package:metabugo/presentation/views/manage_funeral.dart';
+import 'package:metabugo/presentation/views/send_way.dart';
 import 'package:metabugo/presentation/views/signUp/sign_in.dart';
 import 'package:metabugo/res/media_res.dart';
 

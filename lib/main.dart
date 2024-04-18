@@ -11,13 +11,12 @@ import 'package:metabugo/presentation/providers/hour_provider.dart';
 import 'package:metabugo/presentation/providers/minute_provider.dart';
 import 'package:metabugo/presentation/viewmodels/auth_viewmodel.dart';
 import 'package:metabugo/presentation/viewmodels/furneral_viewmodel.dart';
-import 'package:metabugo/presentation/views/bugoPreview/bugo_preview_screen.dart';
+import 'package:metabugo/presentation/views/splash_screen.dart';
 
 import 'package:metabugo/utils/constants.dart';
 
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -56,7 +55,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: BugoPreViewScreen(),
+        home: SplashScreen(),
       ), /*SignUpWithPhone(),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,

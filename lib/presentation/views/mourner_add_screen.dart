@@ -21,7 +21,7 @@ class MournerAddScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '상주추가하기',
+                '상주 추가 하기',
                 style: TextStyle(
                   color: MediaRes.blackColor,
                   fontWeight: MediaRes.medium,

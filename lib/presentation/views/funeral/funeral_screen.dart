@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/presentation/providers/death_day_provider.dart';
+import 'package:metabugo/presentation/providers/end_day_provider.dart';
 import 'package:metabugo/presentation/views/funeral/burial_ground.dart';
 import 'package:metabugo/presentation/views/funeral/death_day.dart';
 import 'package:metabugo/presentation/views/funeral/deceased_info.dart';
+import 'package:metabugo/presentation/views/funeral/end_day.dart';
 import 'package:metabugo/presentation/views/funeral/funeral_parlor.dart';
 import 'package:metabugo/presentation/views/funeral/message_mourners.dart';
 import 'package:metabugo/presentation/views/funeral/mourner_info.dart';
@@ -17,6 +19,7 @@ class FuneralScreen extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => DeathDayProvider()),
+        ChangeNotifierProvider(create: (_) => EndDayProvider()),
       ],
       child: Scaffold(
         appBar: AppBar(
@@ -45,6 +48,7 @@ class FuneralScreen extends StatelessWidget {
                 MournerInfo(),
                 DeceasedInfo(),
                 DeathDay(),
+                EndDay(),
                 FuneralParlor(),
                 BurialGround(),
                 MessageMourners(),

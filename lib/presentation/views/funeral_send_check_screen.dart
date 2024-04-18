@@ -22,7 +22,7 @@ class FuneralSendCheckScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '내역확인하기',
+                '부고 보낸내역',
                 style: TextStyle(
                   color: MediaRes.blackColor,
                   fontWeight: MediaRes.medium,

@@ -15,7 +15,7 @@ class FlowerSendCheckScreen extends StatelessWidget {
           },
           icon: Icon(Icons.keyboard_arrow_left),
         ),
-        title: Text('내역확인하기'),
+        title: Text('내역 확인하기'),
         titleSpacing: 0,
       ),
       body: Container(

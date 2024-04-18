@@ -22,7 +22,7 @@ class FuneralSendListScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '부고장 보낸내역',
+                '부고 보낸내역',
                 style: TextStyle(
                   color: MediaRes.blackColor,
                   fontWeight: MediaRes.medium,
@@ -109,7 +109,7 @@ class FuneralSendListScreen extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      '내역 확인',
+                      '보내기',
                       style: TextStyle(
                         fontSize: MediaRes.fontSize18,
                         fontWeight: MediaRes.semiBold,

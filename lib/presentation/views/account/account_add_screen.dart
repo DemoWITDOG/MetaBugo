@@ -24,7 +24,7 @@ class AccountAddScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '계좌번호추가',
+                '계좌번호 추가',
                 style: TextStyle(
                   color: MediaRes.blackColor,
                   fontWeight: MediaRes.medium,

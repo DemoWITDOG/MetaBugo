@@ -13,7 +13,8 @@ class MediaRes{
 
   static const _candle = '$_baseImagePath/candle.png';
   static const _splash = '$_baseSplashImage/splash.png';
-  static const _kakao = '$_baseSplashImage/kakao.png';
+  static const _kakao = '$_baseImagePath/kakao.png';
+  static const _kakaoo = '$_baseImagePath/kakaoo.png';
   static const _flowerIcon = '$_baseImagePath/flower_icon.png';
   static const _makeBugo = '$_baseMainImage/make_bugo.png';
   static const _manage = '$_baseMainImage/manage.png';
@@ -23,6 +24,7 @@ class MediaRes{
   static String get candle => _candle;
   static String get splash => _splash;
   static String get kakao => _kakao;
+  static String get kakaoo => _kakaoo;
   static String get flowerIcon => _flowerIcon;
   static String get makeBugo => _makeBugo;
   static String get manage => _manage;
@@ -44,6 +46,7 @@ class MediaRes{
   static const int _bugoPannel = 0xff3B3737 ;
   static const int _greyText2 = 0xffB2B2B2;
   static const int _greyTextSearch = 0xff898989; // 색상 찾기
+  static const int _messageText = 0xff3E2723; // 색상 찾기
 
 
   static const int _mainBtnColor = 0xff9F836A;
@@ -66,6 +69,7 @@ class MediaRes{
   static Color get bugoPannel => Color(_bugoPannel);
   static Color get greyText2 => Color(_greyText2);
   static Color get greyTextSearch => Color(_greyTextSearch);
+  static Color get messageText => Color(_messageText);
 
 
   static Color get mainBtnColor => Color(_mainBtnColor);

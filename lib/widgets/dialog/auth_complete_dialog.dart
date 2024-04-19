@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:metabugo/presentation/views/account/account_add_screen.dart';
-import 'package:metabugo/presentation/views/mourner_add_screen.dart';
+import 'package:metabugo/presentation/views/funeral/funeral_screen.dart';
+import 'package:metabugo/presentation/views/privacy_agreement_modal.dart';
 import 'package:metabugo/res/media_res.dart';
 
-class MournerAddDialog extends StatelessWidget {
-  const MournerAddDialog({super.key});
+class AuthCompleteDialog extends StatelessWidget {
+  const AuthCompleteDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class MournerAddDialog extends StatelessWidget {
       ),
       child: Container(
         width: 294,
-        height: 252,
+        height: 180,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -22,7 +22,7 @@ class MournerAddDialog extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                '상주추가',
+                '인증완료',
                 style: TextStyle(
                   fontSize: MediaRes.fontSize22,
                   fontWeight: MediaRes.semiBold,
@@ -32,7 +32,7 @@ class MournerAddDialog extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                '상주를 추가하겠습니까?',
+                '인증이 완료되었습니다',
                 style: TextStyle(
                   fontSize: MediaRes.fontSize18,
                   fontWeight: MediaRes.medium,
@@ -43,36 +43,8 @@ class MournerAddDialog extends StatelessWidget {
               SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MournerAddScreen()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 56),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  backgroundColor: MediaRes.mainBtnColor,
-                ),
-                child: Text(
-                  '상주추가',
-                  style: TextStyle(
-                    color: MediaRes.whiteColor,
-                    fontFamily: MediaRes.fontPretendard,
-                    fontSize: MediaRes.fontSize18,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AccountAddScreen()),
-                  );
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => FuneralScreen()));
+                 //Navigator.push(context, MaterialPageRoute(builder: MaterialPageRoute))
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 56),
@@ -82,7 +54,7 @@ class MournerAddDialog extends StatelessWidget {
                   backgroundColor: MediaRes.blackColor,
                 ),
                 child: Text(
-                  '넘어가기',
+                  '확인',
                   style: TextStyle(
                     color: MediaRes.whiteColor,
                     fontFamily: MediaRes.fontPretendard,

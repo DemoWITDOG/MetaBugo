@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/res/media_res.dart';
+import 'package:metabugo/widgets/dialog/submit_completed_dialog.dart';
 
 class AccountAuthDialog extends StatelessWidget {
   const AccountAuthDialog({Key? key});
@@ -7,6 +8,7 @@ class AccountAuthDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
+      backgroundColor: MediaRes.whiteColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
@@ -89,7 +91,13 @@ class AccountAuthDialog extends StatelessWidget {
               ),
               SizedBox(height: 16),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SubmitCompletedDialog()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 56),
                   shape: RoundedRectangleBorder(

@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:metabugo/presentation/providers/date_of_death_provider.dart';
 import 'package:metabugo/presentation/providers/death_day_provider.dart';
-import 'package:metabugo/presentation/providers/death_hour_provider.dart';
-import 'package:metabugo/presentation/providers/death_min_provider.dart';
-
+import 'package:metabugo/presentation/providers/hour_provider.dart';
+import 'package:metabugo/presentation/providers/minute_provider.dart';
 import 'package:metabugo/res/media_res.dart';
-import 'package:metabugo/widgets/death_hour_picker.dart';
-import 'package:metabugo/widgets/death_minute_picker.dart';
 import 'package:metabugo/widgets/hour_picker.dart';
 import 'package:metabugo/widgets/minute_picker.dart';
 import 'package:provider/provider.dart';
 
-class DeathDay extends StatelessWidget {
-  const DeathDay({Key? key}) : super(key: key);
+class DateOfDeath extends StatelessWidget {
+  const DateOfDeath({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final deathDayProvider = Provider.of<DeathDayProvider>(context);
+    final dateOfDeathProvider = Provider.of<DateOfDeathProvider>(context);
 
     return Padding(
       padding: const EdgeInsets.only(left: 16.0, right: 16.0),
@@ -26,7 +24,7 @@ class DeathDay extends StatelessWidget {
           Row(
             children: [
               Text(
-                '임종일시',
+                '발인일시',
                 style: TextStyle(
                   fontSize: MediaRes.fontSize18,
                   fontWeight: MediaRes.medium,
@@ -46,9 +44,9 @@ class DeathDay extends StatelessWidget {
             height: 8,
           ),
           TextField(
-            controller: deathDayProvider.dateController,
+            controller: dateOfDeathProvider.dateController,
             onTap: (){
-              deathDayProvider.selectDatePicker(context);
+              dateOfDeathProvider.selectDatePicker(context);
             },
             decoration: InputDecoration(
                 hintText: '날짜를 선택해 주세요',
@@ -74,9 +72,9 @@ class DeathDay extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: Consumer<DeathHourProvider>(
-                  builder: (context, deathHourProvider, child) {
-                    TextEditingController _controller = TextEditingController(text: deathHourProvider.currentHour != 1 ? deathHourProvider.currentHour.toString() : '');
+                child: Consumer<HourProvider>(
+                  builder: (context, hourProvider, child) {
+                    TextEditingController _controller = TextEditingController(text: hourProvider.currentHour != 1 ? hourProvider.currentHour.toString() : '');
                     return Column(
                       children: [
                         TextField(
@@ -88,12 +86,12 @@ class DeathDay extends StatelessWidget {
                               builder: (BuildContext context) {
                                 return Container(
                                   height: 300,
-                                  child: DeathHourPicker(),
+                                  child: HourPicker(),
                                 );
                               },
                             );
                             if(selectedHour != null) {
-                              deathHourProvider.updateHour(selectedHour);
+                              hourProvider.updateHour(selectedHour);
                               _controller.text = selectedHour.toString();
                             }
                           },
@@ -129,9 +127,9 @@ class DeathDay extends StatelessWidget {
               ),
               SizedBox(width: 8), // 간격 추가
               Expanded(
-                child: Consumer<DeathMinProvider>(
-                  builder: (context, deathMinProvider, child) {
-                    TextEditingController _controller = TextEditingController(text: deathMinProvider.currentMinute != 0 ? deathMinProvider.currentMinute.toString() : '');
+                child: Consumer<MinuteProvider>(
+                  builder: (context, minuteProvider, child) {
+                    TextEditingController _controller = TextEditingController(text: minuteProvider.currentMinute != 0 ? minuteProvider.currentMinute.toString() : '');
                     return Column(
                       children: [
                         TextFormField(
@@ -143,12 +141,12 @@ class DeathDay extends StatelessWidget {
                               builder: (BuildContext context) {
                                 return Container(
                                   height: 300,
-                                  child: DeathMinutePicker(), // 분 선택 다이얼로그 표시
+                                  child: MinutePicker(), // 분 선택 다이얼로그 표시
                                 );
                               },
                             );
                             if(selectedMinute != null) {
-                              deathMinProvider.updateMinute(selectedMinute);
+                              minuteProvider.updateMinute(selectedMinute);
                               _controller.text = selectedMinute.toString();
                             }
                           },

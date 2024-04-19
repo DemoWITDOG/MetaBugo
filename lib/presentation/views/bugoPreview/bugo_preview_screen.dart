@@ -4,6 +4,7 @@ import 'package:metabugo/presentation/views/bugoPreview/bugo_preview_navi.dart';
 import 'package:metabugo/presentation/views/bugoPreview/bugo_preview_send_message.dart';
 import 'package:metabugo/presentation/views/bugoPreview/bugo_preview_subtitle.dart';
 import 'package:metabugo/presentation/views/bugoPreview/bugo_preview_title.dart';
+import 'package:metabugo/presentation/views/send_way_modal.dart';
 import 'package:metabugo/res/media_res.dart';
 
 class BugoPreViewScreen extends StatelessWidget {
@@ -33,13 +34,23 @@ class BugoPreViewScreen extends StatelessWidget {
                   fontSize: MediaRes.fontSize20,
                 ),
               ),
-              Text(
-                '보내기',
-                style: TextStyle(
-                  fontSize: MediaRes.fontSize18,
-                  fontWeight: MediaRes.medium,
-                  fontFamily: MediaRes.fontPretendard,
-                  color: MediaRes.blueText,
+              InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SendWayModal();
+                    },
+                  );
+                },
+                child: Text(
+                  '보내기',
+                  style: TextStyle(
+                    fontSize: MediaRes.fontSize18,
+                    fontWeight: MediaRes.medium,
+                    fontFamily: MediaRes.fontPretendard,
+                    color: MediaRes.blueText,
+                  ),
                 ),
               )
             ],

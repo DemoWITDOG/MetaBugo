@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/presentation/providers/death_day_provider.dart';
-import 'package:metabugo/presentation/providers/end_day_provider.dart';
 import 'package:metabugo/presentation/views/funeral/burial_ground.dart';
 import 'package:metabugo/presentation/views/funeral/death_day.dart';
+import 'package:metabugo/presentation/views/funeral/date_of_death.dart';
 import 'package:metabugo/presentation/views/funeral/deceased_info.dart';
-import 'package:metabugo/presentation/views/funeral/end_day.dart';
 import 'package:metabugo/presentation/views/funeral/funeral_parlor.dart';
 import 'package:metabugo/presentation/views/funeral/message_mourners.dart';
 import 'package:metabugo/presentation/views/funeral/mourner_info.dart';
 import 'package:metabugo/res/media_res.dart';
+import 'package:metabugo/widgets/dialog/mourner_add_dialog.dart';
 import 'package:provider/provider.dart';
 
 class FuneralScreen extends StatelessWidget {
@@ -19,7 +19,6 @@ class FuneralScreen extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => DeathDayProvider()),
-        ChangeNotifierProvider(create: (_) => EndDayProvider()),
       ],
       child: Scaffold(
         appBar: AppBar(
@@ -48,7 +47,7 @@ class FuneralScreen extends StatelessWidget {
                 MournerInfo(),
                 DeceasedInfo(),
                 DeathDay(),
-                EndDay(),
+                DateOfDeath(),
                 FuneralParlor(),
                 BurialGround(),
                 MessageMourners(),
@@ -61,6 +60,12 @@ class FuneralScreen extends StatelessWidget {
                     backgroundColor: MediaRes.blackBtnColor,
                   ),
                   onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return MournerAddDialog();
+                      },
+                    );
                     // 버튼을 눌렀을 때 수행할 동작
                   },
                   child: Text(
@@ -75,7 +80,6 @@ class FuneralScreen extends StatelessWidget {
                 ),
               ],
             ),
-
           ),
         ),
       ),

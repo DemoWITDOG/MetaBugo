@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 import 'package:metabugo/presentation/providers/account_add_provider.dart';
+import 'package:metabugo/presentation/providers/date_of_death_provider.dart';
 import 'package:metabugo/presentation/providers/datepicker_provider.dart';
 import 'package:metabugo/presentation/providers/death_day_provider.dart';
+import 'package:metabugo/presentation/providers/death_hour_provider.dart';
+import 'package:metabugo/presentation/providers/death_min_provider.dart';
 import 'package:metabugo/presentation/providers/funeral_search_provider.dart';
 import 'package:metabugo/presentation/providers/funeral_selected_provider.dart';
 import 'package:metabugo/presentation/providers/home_screen_provider.dart';
@@ -44,8 +47,11 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
         ChangeNotifierProvider(create: (_) => DeathDayProvider()),
+        ChangeNotifierProvider(create: (_) => DateOfDeathProvider()),
+        ChangeNotifierProvider(create: (_) => DeathHourProvider()),
         ChangeNotifierProvider(create: (_) => HourProvider()),
         ChangeNotifierProvider(create: (_) => MinuteProvider()),
+        ChangeNotifierProvider(create: (_) => DeathMinProvider()),
         ChangeNotifierProvider(create: (_) => FuneralSelectedProvider()),
         ChangeNotifierProvider(create: (_) => AccountAddProvider()),
         ChangeNotifierProvider(create: (_) => FuneralSearchProvider()),

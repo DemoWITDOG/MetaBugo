@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metabugo/presentation/views/search_funeral.dart';
 import 'package:metabugo/res/media_res.dart';
 
 class FuneralParlor extends StatelessWidget {
@@ -40,6 +41,14 @@ class FuneralParlor extends StatelessWidget {
               Expanded(
                 flex: 2, // 장례식장 검색이 전체 가로 너비의 2/3을 차지하도록 설정
                 child: TextField(
+                  onTap: () {
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (context) => SearchFuneral()),
+    );
+
+                  },
                   keyboardType: TextInputType.text,
                   style: TextStyle(
                     fontWeight: MediaRes.medium,

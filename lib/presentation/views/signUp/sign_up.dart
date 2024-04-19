@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/presentation/providers/datepicker_provider.dart';
 import 'package:metabugo/presentation/viewmodels/auth_viewmodel.dart';
+import 'package:metabugo/presentation/views/signUp/auth_phone.dart';
 import 'package:metabugo/res/media_res.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +18,9 @@ class SignUp extends StatelessWidget {
       appBar: AppBar(
         title: Text('본인인증하기'),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(Icons.keyboard_arrow_left),
         ),
         titleSpacing: 0,
@@ -57,14 +60,16 @@ class SignUp extends StatelessWidget {
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: MediaRes.textUnderLineColor),
+                        borderSide:
+                            BorderSide(color: MediaRes.textUnderLineColor),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide(color: MediaRes.greyBtnColor),
                       ),
                       isDense: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 16, horizontal: 12),
                     ),
                   ),
                   SizedBox(
@@ -86,14 +91,16 @@ class SignUp extends StatelessWidget {
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: BorderSide(color: MediaRes.textUnderLineColor),
+                          borderSide:
+                              BorderSide(color: MediaRes.textUnderLineColor),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide(color: MediaRes.greyBtnColor),
                         ),
                         isDense: true,
-                        contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 16, horizontal: 12),
                       ),
                     ),
                   ),
@@ -112,14 +119,16 @@ class SignUp extends StatelessWidget {
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: MediaRes.textUnderLineColor),
+                        borderSide:
+                            BorderSide(color: MediaRes.textUnderLineColor),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide(color: MediaRes.greyBtnColor),
                       ),
                       isDense: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 16, horizontal: 12),
                     ),
                   ),
                 ],
@@ -143,6 +152,11 @@ class SignUp extends StatelessWidget {
                 onPressed: () {
                   final phoneNumber = phoneController.text;
                   authViewModel.signUp(phoneNumber);
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AuthPhone();
+                      });
                 },
                 child: Text(
                   '인증번호받기',

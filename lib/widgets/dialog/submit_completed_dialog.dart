@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:metabugo/presentation/views/funeral_send_list_screen.dart';
+import 'package:metabugo/presentation/views/home_screen.dart';
 import 'package:metabugo/res/media_res.dart';
 
 class SubmitCompletedDialog extends StatelessWidget {
@@ -40,7 +42,13 @@ class SubmitCompletedDialog extends StatelessWidget {
               ),
               SizedBox(height: 16),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FuneralSendListScreen()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 56),
                   shape: RoundedRectangleBorder(

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:metabugo/presentation/views/bugoPreview/bugo_preview_screen.dart';
-import 'package:metabugo/presentation/views/funeral_send_check_screen.dart';
+import 'package:metabugo/presentation/views/flower_send_check_screen.dart';
 import 'package:metabugo/res/media_res.dart';
-import 'package:metabugo/widgets/dialog/cancel_modify_dialog.dart';
 
-class FuneralSendListScreen extends StatelessWidget {
-  const FuneralSendListScreen({Key? key}) : super(key: key);
+class SendFlower extends StatelessWidget {
+  const SendFlower({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,44 +11,16 @@ class FuneralSendListScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: MediaRes.whiteColor,
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.keyboard_arrow_left),
-        ),
-        title: Padding(
-          padding: const EdgeInsets.only(right: 16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '부고 보낸내역',
-                style: TextStyle(
-                  color: MediaRes.blackColor,
-                  fontWeight: MediaRes.medium,
-                  fontSize: MediaRes.fontSize20,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return CancelModifyDialog();
-                    },
-                  );
-                },
-                child: Text(
-                  '취소/수정',
-                  style: TextStyle(
-                    fontSize: MediaRes.fontSize18,
-                    fontWeight: MediaRes.medium,
-                    fontFamily: MediaRes.fontPretendard,
-                    color: MediaRes.blueText,
-                  ),
-                ),
-              )
-            ],
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.keyboard_arrow_left)),
+        title: Text(
+          '화환 내역 확인하기',
+          style: TextStyle(
+            fontSize: MediaRes.fontSize20,
+            fontFamily: MediaRes.fontPretendard,
+            fontWeight: MediaRes.medium,
           ),
         ),
         titleSpacing: 0,
@@ -65,7 +35,7 @@ class FuneralSendListScreen extends StatelessWidget {
                   leading: ClipRRect(
                     borderRadius: BorderRadius.circular(12.0),
                     child: Image.asset(
-                      MediaRes.candle,
+                      MediaRes.flowerIcon,
                       height: 53,
                       width: 53,
                       fit: BoxFit.fill,
@@ -111,7 +81,7 @@ class FuneralSendListScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BugoPreViewScreen()),
+                            builder: (context) => FlowerSendCheckScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -122,7 +92,7 @@ class FuneralSendListScreen extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      '보내기',
+                      '내역 확인',
                       style: TextStyle(
                         fontSize: MediaRes.fontSize18,
                         fontWeight: MediaRes.semiBold,
@@ -134,6 +104,7 @@ class FuneralSendListScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                  //padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Divider(
                     indent: 1,
                     color: MediaRes.textUnderLineColor,

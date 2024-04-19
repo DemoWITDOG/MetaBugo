@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metabugo/presentation/views/account/account_add_screen.dart';
 import 'package:metabugo/res/media_res.dart';
 
 class MournerAddScreen extends StatelessWidget {
@@ -180,6 +181,11 @@ class MournerAddScreen extends StatelessWidget {
                       backgroundColor: MediaRes.blackBtnColor,
                     ),
                     onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AccountAddScreen()),
+                      );
                       // 버튼을 눌렀을 때 수행할 동작
                     },
                     child: Text(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/res/media_res.dart';
+import 'package:metabugo/widgets/dialog/auth_complete_dialog.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 
 class AuthPhone extends StatelessWidget {
@@ -40,7 +41,7 @@ class AuthPhone extends StatelessWidget {
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide:
-                        BorderSide(color: MediaRes.textUnderLineColor),
+                            BorderSide(color: MediaRes.textUnderLineColor),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
@@ -48,22 +49,22 @@ class AuthPhone extends StatelessWidget {
                       )),
                 ),
                 Positioned(
-                  right: 15,top: 20,
+                  right: 15,
+                  top: 20,
                   child: Container(
                     height: 23,
                     child: Countdown(
                       // controller: _controller,
                       seconds: 60,
                       build: (_, double time) => Text(
-                        time.toInt().toString()+'초',
+                        time.toInt().toString() + '초',
                         style: TextStyle(
                           color: MediaRes.redAlertText,
                           fontSize: MediaRes.fontSize18,
                         ),
                       ),
                       interval: Duration(milliseconds: 100),
-                      onFinished: (){
-                      },
+                      onFinished: () {},
                     ),
                   ),
                 )
@@ -107,7 +108,13 @@ class AuthPhone extends StatelessWidget {
                 height: 56,
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AuthCompleteDialog()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: MediaRes.mainBtnColor,
                         shape: RoundedRectangleBorder(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/res/media_res.dart';
 
-class SendWay extends StatelessWidget {
-  const SendWay({super.key});
+class SendWayModal extends StatelessWidget {
+  const SendWayModal({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +32,7 @@ class SendWay extends StatelessWidget {
                       style: TextStyle(
                         color: MediaRes.blackColor,
                         fontFamily: MediaRes.fontPretendard,
+                        fontWeight: MediaRes.semiBold,
                         fontSize: MediaRes.fontSize18,
                       ),
                     ),
@@ -40,7 +41,7 @@ class SendWay extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 56),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     backgroundColor: /*Color(0xffFFDE00)*/
                         MediaRes.kakaoBtnColor),
@@ -54,6 +55,7 @@ class SendWay extends StatelessWidget {
                   '문자 보내기',
                   style: TextStyle(
                     color: MediaRes.blackColor,
+                    fontWeight: MediaRes.semiBold,
                     fontFamily: MediaRes.fontPretendard,
                     fontSize: MediaRes.fontSize18,
                   ),
@@ -61,9 +63,9 @@ class SendWay extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 56),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                    backgroundColor: MediaRes.messageText),
+                    backgroundColor: MediaRes.greyBtnColor),
               ),
             ],
           ),

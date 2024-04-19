@@ -8,7 +8,6 @@ class FlowerSendCheckScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MediaRes.whiteColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -38,13 +37,17 @@ class FlowerSendCheckScreen extends StatelessWidget {
                               fontSize: MediaRes.fontSize18,
                               fontWeight: MediaRes.medium,
                               fontFamily: MediaRes.fontPretendard,
+                              color: MediaRes.blackColor,
                             ),
+                          ),
+                          SizedBox(
+                            height: 5,
                           ),
                           Text(
                             '2024년04월12일',
                             style: TextStyle(
-                              fontSize: MediaRes.fontSize18,
-                              fontWeight: MediaRes.regular,
+                              fontSize: MediaRes.fontSize16,
+                              fontWeight: MediaRes.medium,
                               fontFamily: MediaRes.fontPretendard,
                               color: MediaRes.greyText2,
                             ),
@@ -57,16 +60,18 @@ class FlowerSendCheckScreen extends StatelessWidget {
                           fontSize: MediaRes.fontSize18,
                           fontWeight: MediaRes.medium,
                           fontFamily: MediaRes.fontPretendard,
+                          color: MediaRes.blackColor,
                         ),
                       ),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                  padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 17.0, bottom: 17.0),
                   child: Divider(
                     indent: 1,
                     color: MediaRes.textUnderLineColor,
+                    height: 0,
                   ),
                 ),
               ],

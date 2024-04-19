@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:metabugo/presentation/providers/auto_sign_in_provider.dart';
 import 'package:metabugo/presentation/viewmodels/auth_viewmodel.dart';
 import 'package:metabugo/res/media_res.dart';
+import 'package:metabugo/widgets/dialog/login_success_dialog.dart';
 import 'package:provider/provider.dart';
 
 class SignIn extends StatelessWidget {
@@ -94,6 +95,11 @@ class _SignInContent extends StatelessWidget {
                         onPressed: () {
                           final phoneNumber = phoneController.text;
                           authViewModel.login(phoneNumber);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginSuccessDialog()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(0, 56),

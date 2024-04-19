@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metabugo/presentation/views/home_screen.dart';
 import 'package:metabugo/res/media_res.dart';
 
 class LoginSuccessDialog extends StatelessWidget {
@@ -40,13 +41,18 @@ class LoginSuccessDialog extends StatelessWidget {
               ),
               SizedBox(height: 16),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 56),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  backgroundColor: MediaRes.blackColor,
+                  backgroundColor: MediaRes.mainBtnColor,
                 ),
                 child: Text(
                   '확인',

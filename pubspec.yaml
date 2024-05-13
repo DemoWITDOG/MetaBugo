@@ -1,7 +1,7 @@
 name: metabugo
 description: "meta_bugo"
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.4+4
 
 environment:
   sdk: '>=3.2.4 <4.0.0'
@@ -9,12 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  # TODO: 미팅을 통한 해당 네비 구현 어떻게 할 것인가
-  # tmap_ui_sdk:
-  #  git:
-  #    url: https://github.com/TmapSDK/TmapUI_FlutterSDK.git
-  #    ref: 1.0.38 # version. git tag name
 
   cupertino_icons: ^1.0.2
   provider: ^6.1.2
@@ -28,11 +22,9 @@ dependencies:
   xml2json: ^6.2.3
   dio: ^5.4.2+1
   xml: ^6.5.0
-  supabase_flutter: ^2.5.0
-  webview_flutter: ^4.7.0
-  flutter_inappwebview: ^5.8.0
   kakao_map_plugin: ^0.3.0
   url_launcher: ^6.2.6
+  bootpay: ^4.9.6
 
 dev_dependencies:
   flutter_test:

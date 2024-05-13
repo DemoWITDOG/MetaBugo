@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/presentation/providers/home_screen_provider.dart';
-import 'package:metabugo/presentation/views/account/account_add_screen.dart';
-import 'package:metabugo/presentation/views/funeral/funeral_screen.dart';
 import 'package:metabugo/presentation/views/funeral_send_list_screen.dart';
-import 'package:metabugo/presentation/views/privacy_agreement_modal.dart';
 import 'package:metabugo/presentation/views/send_flower.dart';
 import 'package:metabugo/presentation/views/signUp/sign_in.dart';
 import 'package:metabugo/presentation/views/signUp/sign_up.dart';

@@ -150,8 +150,6 @@ class SignUp extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  final phoneNumber = phoneController.text;
-                  authViewModel.signUp(phoneNumber);
                   showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {

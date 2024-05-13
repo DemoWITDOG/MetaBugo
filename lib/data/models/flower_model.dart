@@ -1,7 +1,7 @@
 class FlowerModel {
   final int idx;
-  final int funeralIdx;
-  final int flowerTypeIdx;
+  final int funeral_idx;
+  final int flowerType_idx;
   final String senderGroup;
   final String sender;
   final String senderText;
@@ -12,8 +12,8 @@ class FlowerModel {
 
   FlowerModel({
     required this.idx,
-    required this.funeralIdx,
-    required this.flowerTypeIdx,
+    required this.funeral_idx,
+    required this.flowerType_idx,
     required this.senderGroup,
     required this.sender,
     required this.senderText,
@@ -27,8 +27,8 @@ class FlowerModel {
   factory FlowerModel.fromJson(Map<String, dynamic> json) {
     return FlowerModel(
       idx: json['idx'] as int,
-      funeralIdx: json['funeral_idx'] as int,
-      flowerTypeIdx: json['flower_type_idx'] as int,
+      funeral_idx: json['funeral_idx'] as int,
+      flowerType_idx: json['flower_type_idx'] as int,
       senderGroup: json['sender_group'] as String,
       sender: json['sender'] as String,
       senderText: json['sender_text'] as String,
@@ -43,8 +43,8 @@ class FlowerModel {
   Map<String, dynamic> toJson() {
     return {
       'idx': idx,
-      'funeral_idx': funeralIdx,
-      'flower_type_idx': flowerTypeIdx,
+      'funeral_idx': funeral_idx,
+      'flower_type_idx': flowerType_idx,
       'sender_group': senderGroup,
       'sender': sender,
       'sender_text': senderText,

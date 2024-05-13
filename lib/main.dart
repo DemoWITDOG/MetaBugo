@@ -15,6 +15,7 @@ import 'package:metabugo/presentation/providers/minute_provider.dart';
 import 'package:metabugo/presentation/viewmodels/auth_test.dart';
 import 'package:metabugo/presentation/viewmodels/auth_viewmodel.dart';
 import 'package:metabugo/presentation/viewmodels/furneral_viewmodel.dart';
+import 'package:metabugo/presentation/views/signUp/privacy/terms_conditions_screen.dart';
 import 'package:metabugo/presentation/views/splash_screen.dart';
 
 import 'package:metabugo/utils/constants.dart';
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+        home: TermsConditionsScreen(),
       ), /*SignUpWithPhone(),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,

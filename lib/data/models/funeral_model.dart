@@ -1,7 +1,6 @@
 class FuneralModel {
   final int idx;
   final String uuid;
-  final int user_idx;
   final int mourner_idx;
   final String deceased_name;
   final String deceased_gender;
@@ -17,11 +16,11 @@ class FuneralModel {
   final String message;
   final DateTime created_at;
   final DateTime updated_at;
+  final int created_by;
 
   FuneralModel({
     required this.idx,
     required this.uuid,
-    required this.user_idx,
     required this.mourner_idx,
     required this.deceased_name,
     required this.deceased_gender,
@@ -37,6 +36,7 @@ class FuneralModel {
     required this.message,
     required this.created_at,
     required this.updated_at,
+    required this.created_by,
   });
 
   // JSON 데이터를 FuneralModel 객체로 변환하는 역직렬화 메서드
@@ -44,7 +44,6 @@ class FuneralModel {
     return FuneralModel(
       idx: json['idx'] as int,
       uuid: json['uuid'] as String,
-      user_idx: json['user_idx'] as int,
       mourner_idx: json['mourner_idx'] as int,
       deceased_name: json['deceased_name'] as String,
       deceased_gender: json['deceased_gender'] as String,
@@ -60,6 +59,7 @@ class FuneralModel {
       message: json['message'] as String,
       created_at: DateTime.parse(json['created_at'] as String),
       updated_at: DateTime.parse(json['updated_at'] as String),
+      created_by: json['created_by'] as int,
     );
   }
 
@@ -68,7 +68,6 @@ class FuneralModel {
     return {
       'idx': idx,
       'uuid': uuid,
-      'user_idx': user_idx,
       'mourner_idx': mourner_idx,
       'deceased_name': deceased_name,
       'deceased_gender': deceased_gender,
@@ -84,6 +83,7 @@ class FuneralModel {
       'message': message,
       'created_at': created_at.toIso8601String(),
       'updated_at': updated_at.toIso8601String(),
+      'created_by': created_by,
     };
   }
 }

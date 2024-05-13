@@ -93,8 +93,6 @@ class _SignInContent extends StatelessWidget {
                     padding: EdgeInsets.only(left: 16, right: 16),
                     child: ElevatedButton(
                         onPressed: () {
-                          final phoneNumber = phoneController.text;
-                          authViewModel.login(phoneNumber);
                           Navigator.push(
                             context,
                             MaterialPageRoute(

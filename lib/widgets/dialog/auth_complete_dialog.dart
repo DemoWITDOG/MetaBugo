@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metabugo/presentation/views/funeral/funeral_screen.dart';
-import 'package:metabugo/presentation/views/privacy_agreement_modal.dart';
+import 'package:metabugo/presentation/views/signUp/privacy_agreement_modal.dart';
 import 'package:metabugo/res/media_res.dart';
 
 class AuthCompleteDialog extends StatelessWidget {

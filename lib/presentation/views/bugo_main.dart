@@ -42,129 +42,136 @@ class BugoMain extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 20),
-        child: Container(
-          width: double.infinity,
-          child: Column(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * 0.91,
-                height: 210,
-                child: Stack(
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.8,
+        child: Center(
+          child: Padding(
+              padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 20),
+              child: Container(
+                transformAlignment: Alignment.center,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Positioned(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreen()),
-                          );
-                        },
-                        child: Ink(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(
-                                    image: AssetImage(MediaRes.makeBugo),
-                                    fit: BoxFit.cover))),
-                      ),
-                    ),
-                    Positioned(
-                        bottom: 0,
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.91,
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  minimumSize: Size(
-                                      MediaQuery.of(context).size.width * 0.91,
-                                      53),
-                                  backgroundColor:
-                                      Colors.black.withOpacity(0.4),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(8),
-                                          bottomRight: Radius.circular(8)))),
-                              onPressed: () {
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.91,
+                      height: 210,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            child: InkWell(
+                              onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => HomeScreen()),
                                 );
                               },
-                              child: Text(
-                                '디지털 부고 만들기',
-                                style: TextStyle(
-                                    color: MediaRes.whiteColor,
-                                    fontSize: MediaRes.fontSize18,
-                                    fontFamily: MediaRes.fontPretendard,
-                                    fontWeight: MediaRes.semiBold),
+                              child: Ink(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                          image: AssetImage(MediaRes.makeBugo),
+                                          fit: BoxFit.cover))),
+                            ),
+                          ),
+                          Positioned(
+                              bottom: 0,
+                              child: SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.91,
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        minimumSize: Size(
+                                            MediaQuery.of(context).size.width * 0.91,
+                                            53),
+                                        backgroundColor:
+                                            Colors.black.withOpacity(0.4),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(8),
+                                                bottomRight: Radius.circular(8)))),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => HomeScreen()),
+                                      );
+                                    },
+                                    child: Text(
+                                      '디지털 부고 만들기',
+                                      style: TextStyle(
+                                          color: MediaRes.whiteColor,
+                                          fontSize: MediaRes.fontSize18,
+                                          fontFamily: MediaRes.fontPretendard,
+                                          fontWeight: MediaRes.semiBold),
+                                    )),
                               )),
-                        )),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.91,
-                height: 210,
-                child: Stack(
-                  children: [
-                    Positioned(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ManageFuneral()),
-                          );
-                        },
-                        child: Ink(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(
-                                    image: AssetImage(MediaRes.manage),
-                                    fit: BoxFit.cover))),
+                        ],
                       ),
                     ),
-                    Positioned(
-                        bottom: 0,
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.91,
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  minimumSize: Size(
-                                      MediaQuery.of(context).size.width * 0.91,
-                                      53),
-                                  backgroundColor:
-                                      Colors.black.withOpacity(0.4),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(8),
-                                          bottomRight: Radius.circular(8)))),
-                              onPressed: () {
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.91,
+                      height: 210,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            child: InkWell(
+                              onTap: () {
                                 Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => ManageFuneral(),
-                                    ));
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ManageFuneral()),
+                                );
                               },
-                              child: Text(
-                                '장례식장 관리하기',
-                                style: TextStyle(
-                                    color: MediaRes.whiteColor,
-                                    fontSize: MediaRes.fontSize18,
-                                    fontFamily: MediaRes.fontPretendard,
-                                    fontWeight: MediaRes.semiBold),
+                              child: Ink(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                          image: AssetImage(MediaRes.manage),
+                                          fit: BoxFit.cover))),
+                            ),
+                          ),
+                          Positioned(
+                              bottom: 0,
+                              child: SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.91,
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        minimumSize: Size(
+                                            MediaQuery.of(context).size.width * 0.91,
+                                            53),
+                                        backgroundColor:
+                                            Colors.black.withOpacity(0.4),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(8),
+                                                bottomRight: Radius.circular(8)))),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => ManageFuneral(),
+                                          ));
+                                    },
+                                    child: Text(
+                                      '장례식장 관리하기',
+                                      style: TextStyle(
+                                          color: MediaRes.whiteColor,
+                                          fontSize: MediaRes.fontSize18,
+                                          fontFamily: MediaRes.fontPretendard,
+                                          fontWeight: MediaRes.semiBold),
+                                    )),
                               )),
-                        )),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
         ),
       ),
     );

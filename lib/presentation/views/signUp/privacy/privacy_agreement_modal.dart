@@ -104,7 +104,7 @@ class PrivacyAgreementModal extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '알림동의',
+                '개인정보 동의',
                 style: TextStyle(
                   fontSize: MediaRes.fontSize18,
                   fontWeight: MediaRes.semiBold,

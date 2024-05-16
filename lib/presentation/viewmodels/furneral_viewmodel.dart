@@ -16,7 +16,7 @@ class FuneralViewModel extends ChangeNotifier {
       print('Response: $response');
 
       // API 응답을 직접 파싱하여 _funeralList를 업데이트
-      _funeralList = response;
+      _funeralList = response.map((data) => FuneralApiModel.fromJson(data)).toList();
       notifyListeners();
     } catch (e) {
       print('Error fetching data: $e');

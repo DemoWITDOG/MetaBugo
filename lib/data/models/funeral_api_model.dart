@@ -46,6 +46,23 @@ class FuneralApiModel {
       serviceKey: XmlUtils.searchResult(xml, 'serviceKey'),
     );
   }
+
+  factory FuneralApiModel.fromJson(Map<String, dynamic> data) {
+    return FuneralApiModel(
+      ctpv: data['ctpv'],
+      fcltNm: data['fcltNm'],
+      addr: data['addr'],
+      telno: data['telno'],
+      tpkct: data['tpkct'],
+      gubun: data['gubun'],
+      mtaCnt: data['mtaCnt'],
+      ehrCnt: data['ehrCnt'],
+      apiType: data['apiType'],
+      numOfRows: data['numOfRows'],
+      pageNo: data['pageNo'],
+      serviceKey: data['serviceKey'],
+    );
+  }
 }
 
 class XmlUtils {

@@ -12,9 +12,9 @@ import 'package:metabugo/presentation/providers/funeral_selected_provider.dart';
 import 'package:metabugo/presentation/providers/home_screen_provider.dart';
 import 'package:metabugo/presentation/providers/hour_provider.dart';
 import 'package:metabugo/presentation/providers/minute_provider.dart';
-import 'package:metabugo/presentation/viewmodels/auth_test.dart';
 import 'package:metabugo/presentation/viewmodels/auth_viewmodel.dart';
 import 'package:metabugo/presentation/viewmodels/furneral_viewmodel.dart';
+import 'package:metabugo/presentation/views/search_funeral.dart';
 import 'package:metabugo/presentation/views/signUp/privacy/terms_conditions_screen.dart';
 import 'package:metabugo/presentation/views/splash_screen.dart';
 
